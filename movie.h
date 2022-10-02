@@ -1,11 +1,11 @@
-#ifndef MOVIE_H //what r these two for??
+#ifndef MOVIE_H 
 #define MOVIE_H
 #include "product.h"
 
 class Movie : public Product
 {
 	public:
-	//does this have to be different from isbn and author variable name
+	
 	Movie(const std::string category, const std::string name, double price, int qty, std::string genre, std::string rating);
 
 	std::set<std::string> keywords() const;
@@ -16,7 +16,6 @@ class Movie : public Product
 
 	bool isMatch(std::vector<std::string>& searchTerms) const;
 
-//what to name these
 	private:
 	std::string genre_;
 	std::string rating_;

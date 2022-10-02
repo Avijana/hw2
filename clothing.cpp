@@ -1,7 +1,8 @@
 #include "clothing.h"
 #include"util.h"
 #include "product.h"
-
+#include <string>
+using namespace std;
 
 Clothing::Clothing(const std::string category, const std::string name, double price, int qty, std::string size, std::string brand) : Product(category, name, price, qty)
 {
@@ -22,7 +23,7 @@ std::set<std::string> Clothing::keywords() const
 
 std::string Clothing::displayString() const
 {
-	std::string temp = name_ + "\nSize: " + size_ + " Brand: " + brand_ + "\n" + std::to_string(price_) + " " + std::to_string(qty_) + " left.";
+	std::string temp = name_ + "\nSize: " + size_ + " Brand: " + brand_ + "\n$" + (std::to_string(price_)).substr(0,5) + " " + std::to_string(qty_) + " left.";
 	return temp;
 }
 

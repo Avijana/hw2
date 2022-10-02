@@ -1,7 +1,7 @@
 #include "movie.h"
 #include"util.h"
 #include "product.h"
-
+using namespace std;
 
 
 
@@ -17,13 +17,14 @@ std::set<std::string> Movie::keywords() const
 	std::set<std::string> temp2;
 	std::set<std::string> res;
 	temp = parseStringToWords(name_);
-	res.insert(genre_);
+	temp2 = parseStringToWords(genre_);
+	res = setUnion(temp, temp2);
 	return res;
 }
 
 std::string Movie::displayString() const
 {
-	std::string temp = name_ + "\nGenre: " + genre_ + " Rating: " + rating_ + "\n" + std::to_string(price_) + " " + std::to_string(qty_) + " left.";
+	std::string temp = name_ + "\nGenre: " + genre_ + " Rating: " + rating_ + "\n$" + (std::to_string(price_)).substr(0,5) + " " + std::to_string(qty_) + " left.";
 	return temp;
 }
 

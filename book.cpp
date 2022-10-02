@@ -1,7 +1,7 @@
 #include "book.h"
 #include"util.h"
 #include "product.h"
-
+using namespace std;
 
 
 
@@ -25,7 +25,7 @@ std::set<std::string> Book::keywords() const
 
 std::string Book::displayString() const
 {
-	std::string temp = name_ + "\nAuthor: " + author_ + " ISBN: " + isbn_ + "\n" + std::to_string(price_) + " " + std::to_string(qty_) + " left.";
+	std::string temp = name_ + "\nAuthor: " + author_ + " ISBN: " + isbn_ + "\n$" + (std::to_string(price_)).substr(0,5) + " " + std::to_string(qty_) + " left.";
 	return temp;
 }
 
