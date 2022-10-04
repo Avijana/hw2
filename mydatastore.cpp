@@ -9,6 +9,15 @@ MyDataStore::MyDataStore()
 }
 MyDataStore::~MyDataStore()
 {
+	for(set<Product*>::iterator it = allProducts.begin(); it != allProducts.end(); it++)
+	{
+		delete *it;
+	}
+
+	for(map<std::string, User*>::iterator it = users.begin(); it != users.end(); it++)
+	{
+		delete it->second;
+	}
 	
 }
 
