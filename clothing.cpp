@@ -23,14 +23,14 @@ std::set<std::string> Clothing::keywords() const
 
 std::string Clothing::displayString() const
 {
-	std::string temp = name_ + "\nSize: " + size_ + " Brand: " + brand_ + "\n$" + (std::to_string(price_)).substr(0,5) + " " + std::to_string(qty_) + " left.";
+	std::string temp = name_ + "\nSize: " + size_ + " Brand: " + brand_ + "\n" + (std::to_string(price_)).substr(0,5) + " " + std::to_string(qty_) + " left.";
 	return temp;
 }
 
 void Clothing::dump(std::ostream& os) const
 {
 	Product::dump(os);
-	os << brand_ << "\n" << size_;
+	os << size_ << "\n" << brand_ << "\n";
 }
 
 bool Clothing::isMatch(std::vector<std::string>& searchTerms) const

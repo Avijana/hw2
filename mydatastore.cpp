@@ -78,13 +78,13 @@ void MyDataStore::viewCart(std::string username)
 	if(users.find(username) == users.end())
 	{
 		//return "invalid request: user does not exist";
-		cout << "invalid request: user DNE" << endl;
+		cout << "Invalid username" << endl;
 		
 	}
 	int prodNum = 1;
 	for(std::vector<Product*>::iterator it = cart[username].begin(); it != cart[username].end(); it++) //prints products in users cart
 	{
-		cout<< "Item " << prodNum << ": " << "\n" << (*it)->displayString() << "\n";
+		cout<< "Item " << prodNum << "\n" << (*it)->displayString() << "\n";
 		prodNum++;
 	}
 	//return outputCart;
@@ -95,7 +95,7 @@ void MyDataStore::buyCart(std::string username)
 	//username = convToLower(username);
 	if(users.find(username) == users.end()) //make lower case when creating user
 	{
-		cout << "invalid request: user does not exist" << endl;
+		cout << "Invalid username" << endl;
 		return;
 	}
 	

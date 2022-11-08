@@ -1,0 +1,10 @@
+"<products>\n"
+			"book\n"
+			"Data Abstraction & Problem Solving with C++\n"
+			"79.99\n"
+			"20\n"
+			"978-013292372-9\n"
+			"Carrano and Henry\n"
+			"</products>\n"
+			"<users>\n"
+			"</users>";

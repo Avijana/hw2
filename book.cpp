@@ -25,14 +25,14 @@ std::set<std::string> Book::keywords() const
 
 std::string Book::displayString() const
 {
-	std::string temp = name_ + "\nAuthor: " + author_ + " ISBN: " + isbn_ + "\n$" + (std::to_string(price_)).substr(0,5) + " " + std::to_string(qty_) + " left.";
+	std::string temp = name_ + "\nAuthor: " + author_ + " ISBN: " + isbn_ + "\n" + (std::to_string(price_)).substr(0,5) + " " + std::to_string(qty_) + " left.";
 	return temp;
 }
 
 void Book::dump(std::ostream& os) const
 {
 	Product::dump(os);
-	os << isbn_ << "\n" << author_;
+	os << isbn_ << "\n" << author_ << "\n";
 }
 
 bool Book::isMatch(std::vector<std::string>& searchTerms) const
